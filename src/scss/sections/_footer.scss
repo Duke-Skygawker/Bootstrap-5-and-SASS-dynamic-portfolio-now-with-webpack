@@ -1,0 +1,147 @@
+@use "../custom" as *;
+@use "../components/mixins" as *;
+
+.footer {
+  padding-top: 1rem;
+  background-color: $footer;
+  color: $white;
+}
+
+// contact box content
+.contact-box {
+  position: relative;
+
+  &__icon {
+    width: 2rem;
+    stroke: $primary;
+    padding-top: 0.5rem;
+
+    @include media-breakpoint-up(sm) {
+      width: 4rem;
+      padding-top: 0;
+    }
+  }
+
+  &__info {
+    padding: 0.4rem;
+    font-weight: 600;
+
+    &--title {
+      color: $white;
+      text-decoration: none;
+      font-size: 1rem;
+      @include media-breakpoint-up(sm) {
+        font-size: 1.4rem;
+      }
+    }
+    &--subtitle {
+      color: $gray-600;
+      text-decoration: none;
+      font-size: 0.8rem;
+      @include media-breakpoint-up(sm) {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+// Social media content
+
+.footer-sm {
+  @include media-breakpoint-up(sm) {
+    margin-top: 1rem;
+  }
+  @include media-breakpoint-up(md) {
+    margin-top: 2rem;
+  }
+  p {
+    font-size: 0.9rem;
+
+    @include media-breakpoint-up(sm) {
+      font-size: 1.1rem;
+    }
+  }
+
+  a {
+    color: $white;
+
+    &:hover {
+      color: $primary;
+    }
+
+    i {
+      font-size: 1.2rem;
+      margin-left: 1rem;
+      margin-bottom: 1rem;
+
+      @include media-breakpoint-up(sm) {
+        font-size: 1.6rem;
+        margin-bottom: 0;
+      }
+      @include media-breakpoint-up(md) {
+        font-size: 1.8rem;
+      }
+    }
+  }
+}
+
+.company-info {
+  .footer-description {
+    p {
+      a {
+        text-decoration: none;
+        color: $white;
+
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+  }
+}
+.copyright-container {
+  background: $black;
+  max-width: 100%;
+  .footer-copyright {
+    padding: 2.5rem 0 1.5rem 0;
+
+    p {
+      span {
+        color: $gray-700;
+      }
+
+      a {
+        text-decoration: none;
+        color: $white;
+
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+  }
+}
+
+// back to top button style
+.back-to-top {
+  position: fixed;
+  width: 3rem;
+  height: 3rem;
+  right: 1.875rem;
+  bottom: 1.875rem;
+  z-index: 9999;
+  background-color: transparent;
+
+  &:hover {
+    background-color: $primary;
+    i {
+      color: $white;
+    }
+  }
+
+  i {
+    color: $black;
+    font-size: 1rem;
+    @include absoluteCenter;
+  }
+}
